@@ -1,0 +1,30 @@
+﻿@if (Show)
+{
+    <div class="dialog-container">
+        <div class="dialog">
+            <div class="dialog-title">@Title</div>
+            <div class="dialog-body">@Body</div>
+            <div class="dialog-buttons">
+                <button class="btn btn-dark mr-2" @onclick="OnOk">
+                    OK
+                </button>
+                <button class="btn btn-danger" @onclick="OnCancel">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter] public bool Show { get; set; }
+    [Parameter]
+    public EventCallback<MouseEventArgs> OnOk { get; set; }
+    [Parameter]
+    public EventCallback<MouseEventArgs> OnCancel { get; set; }
+    [Parameter]
+    public RenderFragment Title { get; set; }
+    [Parameter]
+    public RenderFragment Body { get; set; }
+
+}

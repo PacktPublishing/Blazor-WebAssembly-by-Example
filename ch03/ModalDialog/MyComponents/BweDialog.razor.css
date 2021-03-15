@@ -1,0 +1,30 @@
+﻿.dialog-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 2000;
+}
+
+.dialog {
+    background-color: white;
+    margin: auto;
+    width: 25rem;
+}
+
+.dialog-title {
+    background-color: #343a40;
+    color: white;
+    padding: .5rem;
+}
+
+.dialog-body {
+    padding: 2rem;
+}
+
+.dialog-buttons {
+    background-color: silver;
+    padding: .5rem;
+}
