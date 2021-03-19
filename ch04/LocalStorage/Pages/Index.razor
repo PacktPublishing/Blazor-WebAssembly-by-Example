@@ -1,0 +1,48 @@
+﻿@page "/"
+
+@using LocalStorage.Services
+@inject IJSRuntime js
+
+<h2>Local Storage Service</h2>
+
+<div>
+    Data:
+    <input type="text"
+           @bind-value="data"
+           size="50" />
+</div>
+<div class="pt-2">
+    <button class="btn btn-primary"
+            @onclick="SaveToLocalStorageAsync">
+        Save to Local Storage
+    </button>
+    <button class="btn btn-primary"
+            @onclick="ReadFromLocalStorageAsync">
+        Read from Local Storage
+    </button>
+</div>
+
+@code {
+    private string data;
+    private LocalStorageService localStorage;
+
+    protected override void OnInitialized()
+    {
+        localStorage = new LocalStorageService(js);
+    }
+
+    async Task SaveToLocalStorageAsync()
+    {
+        await localStorage.SetItemAsync<string>(
+            "localStorageData",
+            data);
+    }
+
+    async Task ReadFromLocalStorageAsync()
+    {
+        data = await localStorage.GetItemAsync<string>(
+            "localStorageData");
+    }
+}
+
+

@@ -1,0 +1,29 @@
+﻿@page "/window"
+
+@inject IJSRuntime js
+
+<Document Title="Window Size - My App" />
+
+@if (windowSize.Width != null)
+{
+    <h2>
+        Window Size: @windowSize.Width x @windowSize.Height
+    </h2>
+}
+<button @onclick="GetWindowSize">Get Window Size</button>
+
+@code{
+    private WindowSize windowSize = new WindowSize();
+
+    private async Task GetWindowSize()
+    {
+        windowSize = await js.InvokeAsync<WindowSize>(
+            "bweInterop.getWindowSize");
+    }
+
+    public class WindowSize
+    {
+        public int? Width { get; set; }
+        public int? Height { get; set; }
+    }
+}

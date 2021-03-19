@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ch02",
+    "\\ch02\\Demo",
+    "\\ch02\\EmptyProject",
+    "\\ch02\\Sample"
   ],
   "SelectedNode": "\\LICENSE",
   "PreviewInSolutionExplorer": false

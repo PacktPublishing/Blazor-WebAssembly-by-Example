@@ -1,0 +1,47 @@
+﻿@page "/resize"
+
+@inject IJSRuntime js
+@implements IDisposable
+
+<Document Title="Resize Handler - My App" />
+
+@if (windowSize.Width != null)
+{
+    <h2>
+        Window Size: @windowSize.Width x @windowSize.Height
+    </h2>
+}
+
+@code {
+    private DotNetObjectReference<Resize> objRef;
+    private WindowSize windowSize = new WindowSize();
+
+    protected async override Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            objRef = DotNetObjectReference.Create(this);
+            await js.InvokeVoidAsync(
+                "bweInterop.registerResizeHandler",
+                    objRef);
+        }
+    }
+
+    [JSInvokable]
+    public void GetWindowSize(WindowSize newWindowSize)
+    {
+        windowSize = newWindowSize;
+        StateHasChanged();
+    }
+
+    public void Dispose()
+    {
+        objRef?.Dispose();
+    }
+
+    public class WindowSize
+    {
+        public int? Width { get; set; }
+        public int? Height { get; set; }
+    }
+}

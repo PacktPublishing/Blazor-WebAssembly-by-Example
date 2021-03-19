@@ -1,0 +1,15 @@
+﻿@inject IJSRuntime js
+
+@code {
+    [Parameter] public string Title { get; set; }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await js.InvokeVoidAsync(
+                "bweInterop.setDocumentTitle",
+                Title);
+        }
+    }
+}
