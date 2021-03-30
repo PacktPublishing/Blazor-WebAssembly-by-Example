@@ -1,0 +1,33 @@
+﻿<div class="card text-center">
+    <div class="card-header">
+        @Date
+    </div>
+    <div class="card-body">
+        <img src="@IconUrl" />
+        <h4 class="card-title">@Description</h4>
+        <b>@((int)HighTemp) F&deg;</b> /
+        @((int)LowTemp) F&deg;
+    </div>
+</div>
+
+@code {
+    [Parameter] public long Seconds { get; set; }
+    [Parameter] public double HighTemp { get; set; }
+    [Parameter] public double LowTemp { get; set; }
+    [Parameter] public string Description { get; set; }
+    [Parameter] public string Icon { get; set; }
+
+    private string Date;
+    private string IconUrl;
+
+    protected override void OnInitialized()
+    {
+        Date = DateTimeOffset
+            .FromUnixTimeSeconds(Seconds)
+            .LocalDateTime
+            .ToLongDateString();
+        IconUrl = String.Format(
+            "https://openweathermap.org/img/wn/{0}@2x.png",
+            Icon);
+    }
+}

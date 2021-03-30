@@ -1,0 +1,18 @@
+{
+  "lang": "en",
+  "name": "5-Day Weather Forecast",
+  "short_name": "Weather",
+  "display": "standalone",
+  "start_url": "./",
+  "background_color": "#ffa500",
+  "theme_color": "transparent",
+  "description": "This is a simple 5-day weather forecast application.",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "images/Sun-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

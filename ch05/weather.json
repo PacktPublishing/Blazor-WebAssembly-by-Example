@@ -1,0 +1,291 @@
+{
+  "lat": 32.7767,
+  "lon": -96.7970,
+  "timezone": "America/Chicago",
+  "timezone_offset": -18000,
+  "daily": [
+    {
+      "dt": 1616436000,
+      "sunrise": 1616416088,
+      "sunset": 1616460020,
+      "temp": {
+        "day": 58.5,
+        "min": 54.75,
+        "max": 62.6,
+        "night": 61.29,
+        "eve": 61.25,
+        "morn": 54.75
+      },
+      "feels_like": {
+        "day": 49.69,
+        "night": 51.91,
+        "eve": 50.67,
+        "morn": 47.03
+      },
+      "pressure": 1011,
+      "humidity": 85,
+      "dew_point": 54.01,
+      "wind_speed": 17.83,
+      "wind_deg": 168,
+      "weather": [
+        {
+          "id": 502,
+          "main": "Rain",
+          "description": "heavy intensity rain",
+          "icon": "10d"
+        }
+      ],
+      "clouds": 98,
+      "pop": 1,
+      "rain": 27.91,
+      "uvi": 2.34
+    },
+    {
+      "dt": 1616522400,
+      "sunrise": 1616502408,
+      "sunset": 1616546463,
+      "temp": {
+        "day": 65.41,
+        "min": 51.66,
+        "max": 71.02,
+        "night": 60.93,
+        "eve": 67.48,
+        "morn": 52.07
+      },
+      "feels_like": {
+        "day": 56.89,
+        "night": 54.34,
+        "eve": 63.32,
+        "morn": 42.15
+      },
+      "pressure": 1008,
+      "humidity": 47,
+      "dew_point": 44.85,
+      "wind_speed": 12.91,
+      "wind_deg": 257,
+      "weather": [
+        {
+          "id": 500,
+          "main": "Rain",
+          "description": "light rain",
+          "icon": "10d"
+        }
+      ],
+      "clouds": 0,
+      "pop": 1,
+      "rain": 0.25,
+      "uvi": 6.73
+    },
+    {
+      "dt": 1616608800,
+      "sunrise": 1616588727,
+      "sunset": 1616632906,
+      "temp": {
+        "day": 70.02,
+        "min": 53.17,
+        "max": 75.18,
+        "night": 58.75,
+        "eve": 72.48,
+        "morn": 53.17
+      },
+      "feels_like": {
+        "day": 64.98,
+        "night": 51.66,
+        "eve": 69.96,
+        "morn": 48.85
+      },
+      "pressure": 1006,
+      "humidity": 53,
+      "dew_point": 52.32,
+      "wind_speed": 10.13,
+      "wind_deg": 157,
+      "weather": [
+        {
+          "id": 500,
+          "main": "Rain",
+          "description": "light rain",
+          "icon": "10d"
+        }
+      ],
+      "clouds": 37,
+      "pop": 0.6,
+      "rain": 1.17,
+      "uvi": 5.95
+    },
+    {
+      "dt": 1616695200,
+      "sunrise": 1616675046,
+      "sunset": 1616719349,
+      "temp": {
+        "day": 59.49,
+        "min": 48.67,
+        "max": 64.17,
+        "night": 55.35,
+        "eve": 62.42,
+        "morn": 48.67
+      },
+      "feels_like": {
+        "day": 50.58,
+        "night": 51.26,
+        "eve": 57.96,
+        "morn": 39.79
+      },
+      "pressure": 1012,
+      "humidity": 55,
+      "dew_point": 43.38,
+      "wind_speed": 13.06,
+      "wind_deg": 311,
+      "weather": [
+        {
+          "id": 803,
+          "main": "Clouds",
+          "description": "broken clouds",
+          "icon": "04d"
+        }
+      ],
+      "clouds": 62,
+      "pop": 0,
+      "uvi": 5.81
+    },
+    {
+      "dt": 1616781600,
+      "sunrise": 1616761366,
+      "sunset": 1616805792,
+      "temp": {
+        "day": 67.21,
+        "min": 50.59,
+        "max": 74.03,
+        "night": 65.21,
+        "eve": 70.34,
+        "morn": 50.59
+      },
+      "feels_like": {
+        "day": 58.35,
+        "night": 58.44,
+        "eve": 63.39,
+        "morn": 43.84
+      },
+      "pressure": 1015,
+      "humidity": 47,
+      "dew_point": 46.29,
+      "wind_speed": 14.18,
+      "wind_deg": 156,
+      "weather": [
+        {
+          "id": 800,
+          "main": "Clear",
+          "description": "clear sky",
+          "icon": "01d"
+        }
+      ],
+      "clouds": 0,
+      "pop": 0,
+      "uvi": 6
+    },
+    {
+      "dt": 1616868000,
+      "sunrise": 1616847685,
+      "sunset": 1616892234,
+      "temp": {
+        "day": 69.39,
+        "min": 58.57,
+        "max": 72.9,
+        "night": 60.94,
+        "eve": 69.28,
+        "morn": 58.57
+      },
+      "feels_like": {
+        "day": 63.21,
+        "night": 55.13,
+        "eve": 65.01,
+        "morn": 55.06
+      },
+      "pressure": 1017,
+      "humidity": 50,
+      "dew_point": 50.36,
+      "wind_speed": 11.07,
+      "wind_deg": 352,
+      "weather": [
+        {
+          "id": 804,
+          "main": "Clouds",
+          "description": "overcast clouds",
+          "icon": "04d"
+        }
+      ],
+      "clouds": 86,
+      "pop": 0,
+      "uvi": 6
+    },
+    {
+      "dt": 1616954400,
+      "sunrise": 1616934005,
+      "sunset": 1616978677,
+      "temp": {
+        "day": 68.94,
+        "min": 51.62,
+        "max": 71.73,
+        "night": 61.45,
+        "eve": 67.78,
+        "morn": 51.62
+      },
+      "feels_like": {
+        "day": 63.12,
+        "night": 55.27,
+        "eve": 63.16,
+        "morn": 46.99
+      },
+      "pressure": 1027,
+      "humidity": 34,
+      "dew_point": 39.97,
+      "wind_speed": 6.17,
+      "wind_deg": 62,
+      "weather": [
+        {
+          "id": 800,
+          "main": "Clear",
+          "description": "clear sky",
+          "icon": "01d"
+        }
+      ],
+      "clouds": 0,
+      "pop": 0,
+      "uvi": 6
+    },
+    {
+      "dt": 1617040800,
+      "sunrise": 1617020325,
+      "sunset": 1617065120,
+      "temp": {
+        "day": 71.29,
+        "min": 55.2,
+        "max": 74.43,
+        "night": 64.89,
+        "eve": 69.57,
+        "morn": 55.2
+      },
+      "feels_like": {
+        "day": 59.83,
+        "night": 55.24,
+        "eve": 60.73,
+        "morn": 48.15
+      },
+      "pressure": 1020,
+      "humidity": 38,
+      "dew_point": 44.47,
+      "wind_speed": 18.03,
+      "wind_deg": 187,
+      "weather": [
+        {
+          "id": 802,
+          "main": "Clouds",
+          "description": "scattered clouds",
+          "icon": "03d"
+        }
+      ],
+      "clouds": 46,
+      "pop": 0,
+      "uvi": 6
+    }
+  ]
+}
