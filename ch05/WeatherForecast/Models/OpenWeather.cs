@@ -12,7 +12,7 @@ namespace WeatherForecast.Models
 
     public class Daily
     {
-        public long dt { get; set; }
+        public long Dt { get; set; }
         public Temp Temp { get; set; }
         public Weather[] Weather { get; set; }
     }
@@ -22,10 +22,10 @@ namespace WeatherForecast.Models
         public double Min { get; set; }
         public double Max { get; set; }
     }
-
     public class Weather
     {
         public string Description { get; set; }
         public string Icon { get; set; }
     }
+
 }

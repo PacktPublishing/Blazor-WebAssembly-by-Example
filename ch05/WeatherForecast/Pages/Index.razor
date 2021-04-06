@@ -1,7 +1,7 @@
 ﻿@page "/"
 
-@using System.Text
 @using WeatherForecast.Models
+@using System.Text
 @inject IJSRuntime js
 @inject HttpClient Http
 
@@ -14,7 +14,7 @@ else
     <div class="card-group">
         @foreach (var item in forecast.Daily.Take(5))
         {
-            <DailyForecast Seconds="@item.dt"
+            <DailyForecast Seconds="@item.Dt"
                            LowTemp="@item.Temp.Min"
                            HighTemp="@item.Temp.Max"
                            Description="@item.Weather[0].Description"
@@ -23,10 +23,11 @@ else
     </div>
 }
 
+
 @code {
-    OpenWeather forecast;
     string message = "Loading...";
     Position pos;
+    OpenWeather forecast;
 
     protected override async Task OnInitializedAsync()
     {
@@ -49,7 +50,7 @@ else
 
     private async Task GetForecast()
     {
-        string APIKey = {Your_API_Key};
+        string APIKey = { Your_API_Key }
 
         StringBuilder url = new StringBuilder();
         url.Append("https://api.openweathermap.org");
@@ -65,7 +66,7 @@ else
         url.Append(APIKey);
 
         forecast = await Http
-            .GetFromJsonAsync<OpenWeather>
-            (url.ToString());
+        .GetFromJsonAsync<OpenWeather>
+        (url.ToString());
     }
 }
