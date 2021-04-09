@@ -1,0 +1,74 @@
+﻿@page "/store"
+
+@using ShoppingCart.Models
+@using ShoppingCart.Services
+
+@inject HttpClient Http
+@inject ICartService cartService
+
+@if (products == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div class="row">
+        <div class="col-xl-4 col-lg-6">
+            <h2>Products</h2>
+            <table class="table">
+                @foreach (Product item in products)
+                {
+                    <tr>
+                        <td>
+                            <img src="images/@item.Image" />
+                        </td>
+                        <td class="align-middle">
+                            @item.ProductName
+                        </td>
+                        <td class="align-middle">
+                            $@item.Price
+                        </td>
+                        <td class="align-middle">
+                            <button class="btn btn-primary"
+                                    @onclick="@(() => cartService.AddProduct(item))">
+                                Add to Cart
+                            </button>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+        <div class="col-xl-4 col-lg-6">
+            @if (cartService.Cart.Any())
+            {
+                <h2>Your Cart</h2>
+                <ul class="list-group">
+                    @foreach (Product item in cartService.Cart)
+                    {
+                        <li class="list-group-item p-2">
+                            <button class="btn btn-sm"
+                                    @onclick="@(() =>cartService.DeleteProduct(item))">
+                                <span class="oi oi-delete">
+                                </span>
+                            </button>
+                            @item.ProductName - $@item.Price
+                        </li>
+                    }
+                </ul>
+                <div class="p-2">
+                    <h3>Total: $@cartService.Total</h3>
+                </div>
+            }
+        </div>
+    </div>
+}
+@code {
+    public IList<Product> products;
+    private int total;
+
+    protected override async Task OnInitializedAsync()
+    {
+        products = await Http.GetFromJsonAsync<Product[]>
+                ("sample-data/products.json");
+    }
+}
