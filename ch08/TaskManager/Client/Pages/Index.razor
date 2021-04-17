@@ -1,0 +1,38 @@
+﻿@page "/"
+
+@if (tasks == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div class="d-flex col col-lg-3 mb-4">
+        <input placeholder="Enter Task" @bind="newTask" />
+        <button class="btn btn-success"
+                @onclick="AddTask">
+            Submit
+        </button>
+    </div>
+
+    @foreach (var taskItem in tasks)
+    {
+        <div class="d-flex col col-lg-3 border-bottom"
+             @key="taskItem">
+            <div class="p-2 flex-fill">
+                <input type="checkbox" checked="@taskItem.IsComplete" @onchange="@(()=>CheckboxChecked(taskItem))" />
+                <span class="@((taskItem.IsComplete? "completed-task" : ""))">
+                    @taskItem.TaskName
+                </span>
+            </div>
+            <div class="p-1">
+                <button class="btn btn-outline-danger btn-sm"
+                        title="Delete task"
+                        @onclick="@(()=>DeleteTask(taskItem))">
+                    <span class="oi oi-trash"></span>
+                </button>
+
+            </div>
+        </div>
+    }
+}
+
