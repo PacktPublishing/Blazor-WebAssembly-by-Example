@@ -1,0 +1,119 @@
+﻿@page "/expense"
+@page "/expense/{id:int}"
+
+@using ExpenseTracker.Shared
+@inject HttpClient Http
+@inject NavigationManager Nav
+
+<h3>Add/Edit Expense</h3>
+
+@if (!ready)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <EditForm Model="expense" OnValidSubmit="HandleValidSubmit">
+        <div>
+            <label>
+                Date
+                <InputDate @bind-Value="expense.Date" class="form-control" />
+            </label>
+        </div>
+        <div>
+            <label class="d-block">
+                Vendor
+                <InputText @bind-Value="expense.Vendor" class="form-control" />
+            </label>
+        </div>
+        <div>
+            <label class="d-block">
+                Description
+                <InputTextArea @bind-Value="expense.Description" class="form-control" />
+            </label>
+        </div>
+        <div>
+            <label class="d-block">
+                Type
+                <InputSelect @bind-Value="expense.ExpenseTypeId" class="form-control">
+                    <option value=""></option>
+                    @foreach (var item in types)
+                        {
+                        <option value="@item.Id">
+                            @item.Type
+                        </option>
+                        }
+                </InputSelect>
+            </label>
+        </div>
+        <div>
+            <label>
+                Amount
+                <InputNumber @bind-Value="expense.Amount" class="form-control" />
+            </label>
+        </div>
+        <div>
+            <label>
+                Paid
+                <InputCheckbox @bind-Value="expense.Paid" class="form-control" />
+            </label>
+        </div>
+        <div class="pt-2 pb-2">
+            <button type="submit" class="btn btn-primary mr-auto">
+                Save
+            </button>
+        </div>
+
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+    </EditForm>
+
+    <div>@error</div>
+}
+
+@code {
+    [Parameter] public int id { get; set; }
+
+    private bool ready;
+    private string error;
+    private Expense expense;
+    private IList<ExpenseType> types;
+
+    protected override async Task OnInitializedAsync()
+    {
+        types = await Http.GetFromJsonAsync<IList<ExpenseType>>("ExpenseTypes");
+
+        if (id == 0)
+        {
+            expense = new Expense();
+        }
+        else
+        {
+            expense = await Http.GetFromJsonAsync<Expense>($"Expenses/{id}");
+        }
+        ready = true;
+    }
+
+    private async Task HandleValidSubmit()
+    {
+        HttpResponseMessage response;
+        if (expense.Id == 0)
+        {
+            response = await Http.PostAsJsonAsync("Expenses", expense);
+        }
+        else
+        {
+            string requestUri = $"Expenses/{expense.Id}";
+            response = await Http.PutAsJsonAsync(requestUri, expense);
+        };
+
+        if (response.IsSuccessStatusCode)
+        {
+            Nav.NavigateTo("/");
+        }
+        else
+        {
+            error = response.ReasonPhrase;
+        };
+    }
+}

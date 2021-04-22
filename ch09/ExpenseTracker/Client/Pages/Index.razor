@@ -1,0 +1,52 @@
+﻿@page "/"
+
+@using ExpenseTracker.Shared
+@inject HttpClient Http
+
+<h2>Expenses</h2>
+@if (expenses == null)
+{
+    <p><em>Loading...</em></p>
+}
+else if (expenses.Count == 0)
+{
+    <div>None Found</div>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>#</th>
+                <th>Date</th>
+                <th>Vendor</th>
+                <th class="text-right">Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in expenses)
+            {
+                <tr class="@(item.Paid ? "" : "table-danger")">
+                    <td>
+                        <a href="/expense/@item.Id">Edit</a>
+                    </td>
+                    <td>@item.Id</td>
+                    <td>@item.Date.Value.ToShortDateString()</td>
+                    <td>@item.Vendor</td>
+                    <td class="text-right">@item.Amount</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code{
+    IList<Expense> expenses;
+
+    protected override async Task OnInitializedAsync()
+    {
+        expenses = await Http.GetFromJsonAsync<IList<Expense>>("Expenses");
+    }
+
+}
