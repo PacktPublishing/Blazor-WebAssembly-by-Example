@@ -37,7 +37,7 @@ Route: @Path
 ```
 
 **Following is what you need for this book:**
-Copy and paste the Audience section from the EPIC.
+This book is for .NET web developers who are tired of constantly learning new JavaScript frameworks and wish to write web applications using Blazor WebAssembly, leveraging the power of .NET and C#. The book assumes beginner-level knowledge of the C# language, .NET framework, Microsoft Visual Studio, and web development concepts.
 
 With the following software and hardware list you can run all code files present in the book (Chapter 1-15).
 
