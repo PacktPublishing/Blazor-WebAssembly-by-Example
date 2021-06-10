@@ -11,7 +11,7 @@ Blazor WebAssembly makes it possible to run C# code on the browser without havin
 
 This book covers the following exciting features: 
 * Discover the power of the C# language for both server-side and client-side web development
-* Explore the Blazor App project template to build your first Blazor Wasm application
+* Use the Blazor WebAssembly App project template to build your first Blazor WebAssembly application
 * Use templated components and the Razor class library to build a modal dialog box
 * Understand how to use JavaScript with Blazor WebAssembly
 * Build a progressive web app (PWA) to enable native app-like performance and speed
