@@ -65,3 +65,7 @@ Click on the following link to see the Code in Action:
 ## Get to Know the Author
 **Toi B. Wright**
 has been a Microsoft MVP in ASP.NET for 16 years and is also an ASP Insider. She is an experienced full-stack software developer, book author, courseware author, speaker, and community leader with over 25 years of experience. She has a BS in computer science and engineering from the Massachusetts Institute of Technology (MIT) and an MBA from Carnegie Mellon University (CMU).
+### Download a free PDF
+
+ <i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
+<p align="center"> <a href="https://packt.link/free-ebook/9781800567511">https://packt.link/free-ebook/9781800567511 </a> </p>
